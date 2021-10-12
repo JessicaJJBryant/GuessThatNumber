@@ -56,7 +56,20 @@ while (restartGame) {
         }
         // Removes an attempt
         attempts--;
-        break;
+        // Checks if the user guessed correctly. If so, the game ends. (NOTE: The BREAK ends the loop.)
+        if (guess === randomNum) {
+            alert(`CONGRATULATIONS!!! YOU GUESSED THE CORRECT NUMBER: ${randomNum}`);
+            break;
+        // Checks if user has any attempts left. If not, then the game ends and the number is displayed to the user:
+        } else if (attempts === 0) {
+            alert(`Sorry, but you have run out of attempts :(. The number was ${randomNum}`);
+            break;
+        // Checks if user's guess was too low and prompts user to guess again if that is the case. NOTE: NO BREAK. We want it to keep going on the loop.
+        } else if (guess < randomNum) {
+            guess = prompt(`Too low. You have ${attempts} attempt(s) left`);
+        } else {
+            guess = prompt(`Too high. You have ${attempts} attempt(s) left.`)
+        }
     }
     break;
 }
