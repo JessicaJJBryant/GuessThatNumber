@@ -48,6 +48,11 @@ while (restartGame) {
     guess = prompt(`Please enter a guess from 1 to ${rangeNum}. You have ${attempts} attempt(s) left:`);
     // Continues looping until the user guesses the correct number or runs out of attempts (NOTE: Loops until a BREAK keyword is run)
     while (true) {
+        // SECRET CODE--Displays the number/answer when a code word is entered
+        if (guess === `Valley Forge`) {
+            alert(`The number is ${randomNum}.`);
+            guess = prompt(`Please enter a guess from 1 to ${rangeNum}. You have ${attempts} attempt(s) left:`);
+        }
         // This attempts to convert the user's guess into a number:
         guess = parseInt(guess);
         // Verifies the user's guess is a number greater than zero as well as a number within the range set by the user:
