@@ -71,5 +71,23 @@ while (restartGame) {
             guess = prompt(`Too high. You have ${attempts} attempt(s) left.`)
         }
     }
-    break;
+    // Prompts user with option to play again:
+    playAgain = prompt(`Would you like to play again? Y for yes. N for no.`);
+    // Loop continues until user submits a valid response:
+    while (true) {
+        // Checks if the user's response is No (AKA "N"). Takes care of uppercase/lowercase issue here too also.
+        if (playAgain.toUpperCase() ==="N") {
+            alert("Thanks for playing!");
+            // Changes value of restartGame and ends that loop.
+            restartGame = false;
+            break;
+        // Checks if the user's response is Yes (AKA "Y"). Takes care of uppercase/lowercase issue here too also.
+        } else if (playAgain.toUpperCase() === "Y") {
+            // The game restarts with the break:
+            break;
+        // This is if they put in anything but Y or N:
+        } else {
+            prompt ("Please enter Y or N.");
+        }
+    }
 }
