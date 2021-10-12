@@ -27,7 +27,7 @@ alert(`Welcome to "GUESS THAT NUMBER!" Please click "OK" to start the game.`);
 // Game restarts as long as restartGame has value of true
 while (restartGame) {
     // Asks user to enter a number to set the upper bound for the random number that will be created (AKA Number to be guessed). Prompt results are ALWAYS STRINGS:
-    rangeNum = prompt(`Please enter a maximum number for the range`);
+    rangeNum = prompt(`Please enter a maximum number for the range:`);
     // Takes the string from the prompt and converts it into a number value. Also, if the value cannot be converted then the value returned will be NaN (Not a Number--default boolean value of false):
     rangeNum = parseInt(rangeNum);
 
@@ -52,21 +52,21 @@ while (restartGame) {
         guess = parseInt(guess);
         // Verifies the user's guess is a number greater than zero as well as a number within the range set by the user:
         while (!guess || guess < 1 || guess > rangeNum) {
-            guess = parseInt(prompt(`Please enter a number from 1 to ${rangeNum}`));
+            guess = parseInt(prompt(`Please enter a number from 1 to ${rangeNum}.`));
         }
         // Removes an attempt
         attempts--;
         // Checks if the user guessed correctly. If so, the game ends. (NOTE: The BREAK ends the loop.)
         if (guess === randomNum) {
-            alert(`CONGRATULATIONS!!! YOU GUESSED THE CORRECT NUMBER: ${randomNum}`);
+            alert(`CONGRATULATIONS!!! YOU GUESSED THE CORRECT NUMBER: ${randomNum}!!!`);
             break;
         // Checks if user has any attempts left. If not, then the game ends and the number is displayed to the user:
         } else if (attempts === 0) {
-            alert(`Sorry, but you have run out of attempts :(. The number was ${randomNum}`);
+            alert(`Sorry, but you have run out of attempts :(. The number was ${randomNum}.`);
             break;
         // Checks if user's guess was too low and prompts user to guess again if that is the case. NOTE: NO BREAK. We want it to keep going on the loop.
         } else if (guess < randomNum) {
-            guess = prompt(`Too low. You have ${attempts} attempt(s) left`);
+            guess = prompt(`Too low. You have ${attempts} attempt(s) left.`);
         } else {
             guess = prompt(`Too high. You have ${attempts} attempt(s) left.`)
         }
