@@ -31,10 +31,12 @@ while (restartGame) {
     // Takes the string from the prompt and converts it into a number value. Also, if the value cannot be converted then the value returned will be NaN (Not a Number--default boolean value of false):
     rangeNum = parseInt(rangeNum);
 
-    // This verifies that the user's entry for the range number is a number greater than zero (0). We could wrap line 36 in a parseInt instead of lines 36 and 37: rangeNum = parseInt(prompt(enterNumText)); NOTE: NaN has a default boolean value of false, so the !rangeNum will give us the reverse, so value of true. Also, all numbers, positive and negative, have a default boolean value of true, except for zero which has a default boolean value of false. 
+    // This verifies that the user's entry for the range number is a number greater than zero (0). We could wrap line 36 in a parseInt instead of lines 36 and 37: rangeNum = parseInt(prompt(enterNumText)); NOTE: NaN has a default boolean value of false, so the !rangeNum will give us the reverse, (so value of true if rangeNum was false). Also, all numbers, positive and negative, have a default boolean value of true, except for zero which has a default boolean value of false. The right side prevents negative numbers being valid. And remember that OR operators just need one true to be true.
     while (!rangeNum || rangeNum < 1) {
         rangeNum = prompt(enterNumText);
         rangeNum = parseInt(rangeNum);
     }
+    // Creates the random number (AKA Number to be guessed by the user) using the range number entered by the user:
+    randomNum = Math.floor(Math.random() * rangeNum) + 1;
     break;
 }
