@@ -38,5 +38,12 @@ while (restartGame) {
     }
     // Creates the random number (AKA Number to be guessed by the user) using the range number entered by the user:
     randomNum = Math.floor(Math.random() * rangeNum) + 1;
+    // Prompts user to enter a number of attempts allowed (AKA Number of guesses). Also attempts to convert their response into a number value. Note, this one line is combining what occurred on 30-32 and 36-37.
+    attempts = parseInt(prompt(`Please enter a number of attempts allowed:`));
+    // This verifies the user's entry for a number of attempts allowed is a number greater than 0:
+    while (!attempts || attempts < 1) {
+        attempts = parseInt(prompt(enterNumText));
+    }
+
     break;
 }
