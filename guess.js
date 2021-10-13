@@ -22,7 +22,7 @@ let guess;
 let playAgain;
 
 // Starting alert message:
-alert(`Welcome to "GUESS THAT NUMBER!" Please click "OK" to start the game.`);
+alert(`Welcome to "THE DESCENDANTS GAME!" Please click "OK" or "Close" to start the game.`);
 
 // Game restarts as long as restartGame has value of true
 while (restartGame) {
@@ -49,7 +49,7 @@ while (restartGame) {
     // Continues looping until the user guesses the correct number or runs out of attempts (NOTE: Loops until a BREAK keyword is run)
     while (true) {
         // SECRET CODE--Displays the number/answer when a code word is entered
-        if (guess === `Valley Forge`) {
+        if (guess === `Genghis Khan`) {
             alert(`The number is ${randomNum}.`);
             guess = prompt(`Please enter a guess from 1 to ${rangeNum}. You have ${attempts} attempt(s) left:`);
         }
@@ -63,11 +63,11 @@ while (restartGame) {
         attempts--;
         // Checks if the user guessed correctly. If so, the game ends. (NOTE: The BREAK ends the loop.)
         if (guess === randomNum) {
-            alert(`CONGRATULATIONS!!! YOU GUESSED THE CORRECT NUMBER: ${randomNum}!!!`);
+            alert(`Congratulations! You guessed correctly: ${randomNum}! This is the number of descendants you'll have! What an amazing legacy!`);
             break;
         // Checks if user has any attempts left. If not, then the game ends and the number is displayed to the user:
         } else if (attempts === 0) {
-            alert(`Sorry, but you have run out of attempts :(. The number was ${randomNum}.`);
+            alert(`Sorry, but you have run out of attempts :(. The number was ${randomNum} and would have been how many descendants you'll have. But the future is unclear now.`);
             break;
         // Checks if user's guess was too low and prompts user to guess again if that is the case. NOTE: NO BREAK. We want it to keep going on the loop.
         } else if (guess < randomNum) {
@@ -81,7 +81,7 @@ while (restartGame) {
     // Loop continues until user submits a valid response:
     while (true) {
         // Checks if the user's response is No (AKA "N"). Takes care of uppercase/lowercase issue here too also.
-        if (playAgain.toUpperCase() ==="N") {
+        if (playAgain.toUpperCase() === "N") {
             alert("Thanks for playing!");
             // Changes value of restartGame and ends that loop.
             restartGame = false;
@@ -92,7 +92,7 @@ while (restartGame) {
             break;
         // This is if they put in anything but Y or N:
         } else {
-            prompt ("Please enter Y or N.");
+            playAgain = prompt ("Please enter Y or N."); 
         }
     }
 }
